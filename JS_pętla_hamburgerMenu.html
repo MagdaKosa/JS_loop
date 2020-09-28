@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hamburger menu - za pomocą pętli w JS</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9"
+        crossorigin="anonymous">
+    <meta description="Dzień 13, II etap, video 89">
+
+    <style>
+        .wrapper {
+            margin: 10px 90px;
+            transition: .3s linear;
+        }
+
+        .wrapper.menu {
+            padding-left: 25vw;
+        }
+
+        .burger {
+            position: absolute;
+            top: 40px;
+            right: 40px;
+            line-height: 40px;
+            font-size: 60px;
+        }
+
+        .burger:hover {
+            cursor: pointer;
+        }
+
+        aside {
+            position: absolute;
+            top: 0;
+            left: -25vw;
+            background-color: #000;
+            width: 25vw;
+            height: 100vh;
+            transition: 0.3s linear;
+        }
+
+        .fas {
+            display: none;
+        }
+
+        .show {
+            display: block;
+        }
+
+        .menu {
+            left: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="wrapper active">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam provident dolore autem ipsa molestias hic
+            eum! Necessitatibus doloremque minima corporis non blanditiis quo, eius nesciunt rerum consectetur
+            consequatur illo possimus.
+            Dolore excepturi consequuntur a reiciendis! Temporibus tenetur vel quasi molestiae voluptates est minima
+            explicabo error? Soluta odio reiciendis dolor officia vero eos. Aut nemo cupiditate illum quia corrupti
+            aperiam impedit.
+            Exercitationem, itaque dolorum numquam laborum natus quibusdam illo et iste ipsa unde sit debitis eius
+            dignissimos repellat at, rerum tempore. Ad doloribus nihil fugiat ex quidem quaerat iste fugit natus?
+            Voluptatum ut quia doloremque molestias nemo, eos consequatur cum suscipit officiis sapiente ipsa, mollitia
+            illo repellendus harum quo natus, aliquid iusto! Harum ipsa assumenda laboriosam quas eaque iusto expedita
+            facilis?
+            Nam suscipit saepe necessitatibus, modi illo minima nesciunt provident eaque voluptates nemo quasi sit ad
+            rerum placeat impedit pariatur autem dignissimos quam ipsa excepturi voluptate voluptas odit. Quos, modi
+            saepe.</p>
+
+    </div>
+    <div class="burger">
+
+        <i class="fas fa-bars show active"></i>
+        <i class="fas fa-times active"></i>
+
+    </div>
+
+    <aside class="active">
+        <nav></nav>
+    </aside>
+
+
+    <script>
+
+        const burger = document.querySelector(".burger");
+        const activeElement = document.querySelectorAll(".active");
+
+        burger.addEventListener('click', function () {
+            for (let i = 0; i < activeElement.length; i++) {
+                activeElement[i].classList.toggle("show")
+            }
+        })
+        
+    </script>
+</body>
+
+</html>
